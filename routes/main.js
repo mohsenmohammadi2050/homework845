@@ -9,11 +9,7 @@ router.get("/", async function(req, res){
     let text = await s3.getObject({
         Bucket: "cyclic-outstanding-teal-gazelle-eu-west-3",
         Key: "text.json",
-      }).then(res => {
-        console.log("from get ", res)
-      }).catch(err => {
-        console.log("from get err", err)
-      })
+      }).promise()
     res.send(text)
     res.end()
 })
