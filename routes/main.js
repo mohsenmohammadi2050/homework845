@@ -13,7 +13,7 @@ router.get("/", async function(req, res){
             Key: "text.json",
           }).promise()
 
-        res.render("main", {text: JSON.parse(text.Body)})
+        res.render("main", {text: JSON.parse(text.Body)?.content})
     } catch (error) {
         return res.send(error)
     }
