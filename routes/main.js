@@ -6,7 +6,7 @@ var save_content = require("../save_text")
 router.get("/", async function(req, res){
     let text = await s3.getObject({
         Bucket: "cyclic-outstanding-teal-gazelle-eu-west-3",
-        Key: "number.json",
+        Key: "text.json",
       }).then(res => {
         console.log("from get ", res)
       }).catch(err => {
