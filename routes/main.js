@@ -10,7 +10,7 @@ router.get("/", async function(req, res){
         Bucket: "cyclic-outstanding-teal-gazelle-eu-west-3",
         Key: "text.json",
       }).promise()
-    res.send(text)
+    res.send(JSON.parse(text.Body))
     res.end()
 })
 
